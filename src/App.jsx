@@ -6,7 +6,7 @@ import './App.scss';
 function App() {
   const [showContact, setShowContact] = useState(false);
   const [showFinancing, setShowFinancing] = useState(false);
-  const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || '#';
+  const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || 'https://wealth-by-real-estate-production.up.railway.app/#platforms';
 
   return (
     <div className="app">
