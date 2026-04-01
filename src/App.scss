@@ -32,7 +32,7 @@
   &__ticker {
     display: flex;
     white-space: nowrap;
-    animation: ticker 160s linear infinite;
+    animation: ticker 100s linear infinite;
     pointer-events: none;
 
     span {
@@ -56,6 +56,9 @@
     align-items: center;
     padding-top: 40px;
     text-align: center;
+    background: linear-gradient(to bottom, $black 0%, $black 85%, transparent 100%);
+    width: 100%;
+    padding-bottom: 30px;
   }
 
   &__logo {
