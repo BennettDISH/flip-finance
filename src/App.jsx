@@ -11,27 +11,20 @@ function App() {
   return (
     <div className="app">
       <section className="hero">
-        <div className="hero__ticker" aria-hidden="true">
-          <span>Flip Finance</span>
-          <span>Flip Finance</span>
-          <span>Flip Finance</span>
-          <span>Flip Finance</span>
-          <span>Flip Finance</span>
-          <span>Flip Finance</span>
+        <div className="hero__ticker-wrap">
+          <div className="hero__ticker" aria-hidden="true">
+            <span>Flip Finance</span>
+            <span>Flip Finance</span>
+            <span>Flip Finance</span>
+            <span>Flip Finance</span>
+            <span>Flip Finance</span>
+            <span>Flip Finance</span>
+          </div>
         </div>
 
         <div className="hero__top">
           <img src="/images/logo.webp" alt="Flip Finance" className="hero__logo" />
           <p className="hero__tagline">Private Capital Built for Seasoned Fix &amp; Flip Investors</p>
-          <div className="hero__links">
-            <button className="hero__link" onClick={() => setShowPreQualify(true)}>
-              Pre Qualify
-            </button>
-            <span className="hero__link-divider">/</span>
-            <button className="hero__link" onClick={() => setShowSubmitProperty(true)}>
-              Submit a Property
-            </button>
-          </div>
         </div>
 
         <img src="/images/mountain-banner.webp" alt="" className="hero__mountain" />

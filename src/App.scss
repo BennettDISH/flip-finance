@@ -17,25 +17,32 @@
   overflow: hidden;
   background: $black;
 
-  &__ticker {
+  &__ticker-wrap {
     position: absolute;
     top: 50%;
     left: 0;
+    right: 0;
     transform: translateY(-50%);
     z-index: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
+
+  &__ticker {
     display: flex;
     white-space: nowrap;
-    animation: ticker 80s linear infinite;
+    animation: ticker 160s linear infinite;
     pointer-events: none;
 
     span {
       font-family: $font-heading;
-      font-size: clamp(10rem, 28vw, 28rem);
-      font-weight: 900;
+      font-size: clamp(12rem, 32vw, 34rem);
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: -0.04em;
+      letter-spacing: 0.02em;
       line-height: 1;
-      padding-right: 0.3em;
+      padding-right: 0.4em;
       color: $gold;
       opacity: 0.55;
     }
@@ -59,43 +66,13 @@
 
   &__tagline {
     font-family: $font-heading;
-    font-size: 0.95rem;
+    font-size: clamp(0.65rem, 1.3vw, 1rem);
     color: $light-gray;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 500;
-    max-width: 500px;
+    white-space: nowrap;
     padding: 0 20px;
-    margin-bottom: 20px;
-  }
-
-  &__links {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  &__link {
-    background: none;
-    border: none;
-    color: $white;
-    font-family: $font-heading;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color 0.2s;
-    padding: 0;
-
-    &:hover {
-      color: $gold;
-    }
-  }
-
-  &__link-divider {
-    color: $gray;
-    font-weight: 300;
   }
 
   &__mountain {
@@ -111,10 +88,10 @@
 
 @keyframes ticker {
   0% {
-    transform: translateY(-50%) translateX(0);
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(-50%) translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 
@@ -157,7 +134,6 @@
     }
   }
 
-  // Keep text above the pseudo-element
   span, & {
     position: relative;
     z-index: 1;
@@ -262,7 +238,6 @@
 
 .gold {
   color: $gold;
-  // Reset any inherited background-clip text
   -webkit-text-fill-color: $gold;
 }
 
@@ -302,11 +277,11 @@
     }
 
     &__tagline {
-      font-size: 0.8rem;
+      font-size: clamp(0.5rem, 2.5vw, 0.8rem);
     }
 
     &__ticker span {
-      font-size: clamp(6rem, 20vw, 12rem);
+      font-size: clamp(7rem, 22vw, 14rem);
     }
   }
 
