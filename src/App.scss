@@ -73,7 +73,8 @@
     text-transform: uppercase;
     font-weight: 500;
     white-space: nowrap;
-    padding: 0 20px;
+    padding: 8px 40px;
+    background: radial-gradient(ellipse at center, rgba($black, 0.85) 0%, rgba($black, 0.6) 50%, transparent 80%);
   }
 
   &__mountain {
