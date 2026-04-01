@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import PreQualifyModal from './components/ContactModal';
 import SubmitPropertyModal from './components/FinancingForm';
 import './App.scss';
@@ -6,43 +6,48 @@ import './App.scss';
 function App() {
   const [showPreQualify, setShowPreQualify] = useState(false);
   const [showSubmitProperty, setShowSubmitProperty] = useState(false);
-  const heroRef = useRef(null);
-  const textRef = useRef(null);
   const mainSiteUrl = import.meta.env.VITE_MAIN_SITE_URL || 'https://wealth-by-real-estate-production.up.railway.app/#platforms';
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (textRef.current) {
-        const scrollY = window.scrollY;
-        textRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="app">
-      <section className="hero" ref={heroRef}>
+      <section className="hero">
+        <div className="hero__ticker" aria-hidden="true">
+          <span>Flip Finance</span>
+          <span>Flip Finance</span>
+          <span>Flip Finance</span>
+          <span>Flip Finance</span>
+        </div>
+
         <div className="hero__top">
           <img src="/images/logo.webp" alt="Flip Finance" className="hero__logo" />
           <p className="hero__tagline">Private Capital Built for Seasoned Fix &amp; Flip Investors</p>
-          <div className="hero__actions">
-            <button className="btn" onClick={() => setShowPreQualify(true)}>
-              Pre Qualify
-            </button>
-            <button className="btn btn--outline" onClick={() => setShowSubmitProperty(true)}>
-              Submit a Property
-            </button>
-          </div>
         </div>
 
-        <h1 className="hero__title" ref={textRef}>
-          <span>Flip</span>
-          <span>Finance</span>
-        </h1>
-
         <img src="/images/mountain-banner.webp" alt="" className="hero__mountain" />
+      </section>
+
+      <section className="cta-section">
+        <div className="cta-card">
+          <h2 className="cta-card__title">Pre Qualify</h2>
+          <p className="cta-card__desc">
+            Need to have funds available for future projects?
+          </p>
+          <p className="cta-card__desc">
+            Fill out the application and we will get you prequalified within hours of your completed application.
+          </p>
+          <button className="btn" onClick={() => setShowPreQualify(true)}>
+            Apply
+          </button>
+        </div>
+        <div className="cta-card">
+          <h2 className="cta-card__title">Submit a Property</h2>
+          <p className="cta-card__desc">
+            Have a property you need funding on ASAP? Submit an application and our underwriting team will have you approved within hours.
+          </p>
+          <button className="btn" onClick={() => setShowSubmitProperty(true)}>
+            Fund a Project
+          </button>
+        </div>
       </section>
 
       <section className="section section--money">
@@ -68,9 +73,6 @@ function App() {
             <span>More speed.</span>
             <span>Capital built for flippers.</span>
           </div>
-          <button className="btn" onClick={() => setShowPreQualify(true)}>
-            Apply
-          </button>
         </div>
       </section>
 
@@ -94,9 +96,6 @@ function App() {
             <span>More speed.</span>
             <span>Capital built for flippers.</span>
           </div>
-          <button className="btn" onClick={() => setShowSubmitProperty(true)}>
-            Fund a Project
-          </button>
         </div>
         <div className="section__image">
           <img src="/images/investor.webp" alt="The Investor" />
