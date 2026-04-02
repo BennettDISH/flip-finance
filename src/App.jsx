@@ -66,12 +66,12 @@ function App() {
         <div className="section__content">
           <h2 className="section__title">The <span className="gold">Investor</span></h2>
           <p>
-            Whether you’re closing your <span className="gold">first deal</span> or running <span className="gold">multiple flips</span> at once, capital is what moves everything.
+            Whether you’re closing your first deal or running multiple flips at once, capital is what moves everything.
           </p>
           <p>
-            <span className="gold">New investors</span> get in the game faster.<br />
-            <span className="gold">Growing investors</span> scale without friction.<br />
-            <span className="gold">Experienced flippers</span> move on opportunities instantly.
+            New investors get in the game <span className="gold">faster</span>.<br />
+            Growing investors scale <span className="gold">without friction</span>.<br />
+            Experienced flippers move on opportunities <span className="gold">instantly</span>.
           </p>
           <p>
             Same advantage at every level:
@@ -82,14 +82,13 @@ function App() {
             <span className="gold">Execution.</span>
           </p>
           <p>
-            No delays. No missed deals. Just <span className="gold">capital when it matters</span>.
+            <span className="gold">No delays.</span> <span className="gold">No missed deals.</span> Just capital when it matters.
           </p>
         </div>
         <div className="section__image">
           <img src="/images/investor.webp" alt="The Investor" />
         </div>
       </section>
-
       <section className="about">
         <h2 className="about__title">About <span className="gold">Flip Finance</span></h2>
         <div className="about__grid">
