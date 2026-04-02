@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import PreQualifyModal from './components/ContactModal';
-import SubmitPropertyModal from './components/FinancingForm';
+import ApplyModal from './components/ContactModal';
 import './App.scss';
 
 function App() {
-  const [showPreQualify, setShowPreQualify] = useState(false);
-  const [showSubmitProperty, setShowSubmitProperty] = useState(false);
+  const [showApply, setShowApply] = useState(false);
 
   return (
     <div className="app">
@@ -30,25 +28,13 @@ function App() {
       </section>
 
       <section className="cta-section">
-        <div className="cta-card">
-          <h2 className="cta-card__title">Pre Qualify</h2>
+        <div className="cta-card cta-card--single">
+          <h2 className="cta-card__title">Get Approved Now</h2>
           <p className="cta-card__desc">
-            Need to have funds available for future projects?
+            Regardless if you have a property in mind yet, getting approved now is the best way to be able to close quickly.
           </p>
-          <p className="cta-card__desc">
-            Fill out the application and we will get you prequalified within hours of your completed application.
-          </p>
-          <button className="btn-sleek" onClick={() => setShowPreQualify(true)}>
-            Apply
-          </button>
-        </div>
-        <div className="cta-card">
-          <h2 className="cta-card__title">Submit a Property</h2>
-          <p className="cta-card__desc">
-            Have a property you need funding on ASAP? Submit an application and our underwriting team will have you approved within hours.
-          </p>
-          <button className="btn-sleek" onClick={() => setShowSubmitProperty(true)}>
-            Fund a Project
+          <button className="btn-sleek" onClick={() => setShowApply(true)}>
+            Apply Now
           </button>
         </div>
       </section>
@@ -59,9 +45,6 @@ function App() {
         </div>
         <div className="section__content">
           <h2 className="section__title">The <span className="gold">Money</span></h2>
-          <p>
-            Flip Finance is built for real estate investors who <span className="gold">move fast</span>.
-          </p>
           <p>
             Unlike traditional hard money lenders that operate like banks — with rigid underwriting, committees, and slow approvals — Flip Finance provides <span className="gold">private capital</span> designed specifically for fix-and-flip investors.
           </p>
@@ -83,21 +66,21 @@ function App() {
         <div className="section__content">
           <h2 className="section__title">The <span className="gold">Investor</span></h2>
           <p>
-            Flip Finance is built for real estate investors who <span className="gold">move fast</span>.
+            You've done this before. You know the difference between a good deal and a great one — and you know that <span className="gold">speed wins</span>.
           </p>
           <p>
-            Unlike traditional hard money lenders that operate like banks — with rigid underwriting, committees, and slow approvals — Flip Finance provides <span className="gold">private capital</span> designed specifically for fix-and-flip investors.
+            Whether you're scaling your portfolio, locking in your next flip, or jumping on an <span className="gold">off-market opportunity</span>, you need a financing partner that doesn't slow you down.
           </p>
           <p>
-            Our funding comes from private capital sources, which allows us to focus on the <span className="gold">deal itself</span>, not just paperwork and red tape. That means <span className="gold">faster decisions</span>, flexible structures, and funding that moves at the speed real estate investors actually operate.
+            Flip Finance was built by investors, for investors. We understand the urgency of a deal because <span className="gold">we've been in your shoes</span>. No waiting on committees. No explaining your strategy to someone who's never bought a property.
           </p>
           <p>
-            Where hard money lenders often feel like dealing with another bank, Flip Finance acts more like a <span className="gold">capital partner</span> — providing straightforward financing so you can secure opportunities, renovate quickly, and exit profitably.
+            Just <span className="gold">fast, flexible capital</span> from people who speak your language.
           </p>
           <div className="section__taglines">
-            <span>Less bureaucracy.</span>
-            <span>More speed.</span>
-            <span className="gold">Capital built for flippers.</span>
+            <span>You find the deal.</span>
+            <span>We fund it.</span>
+            <span className="gold">It's that simple.</span>
           </div>
         </div>
         <div className="section__image">
@@ -105,17 +88,97 @@ function App() {
         </div>
       </section>
 
+      <section className="about">
+        <h2 className="about__title">About <span className="gold">Flip Finance</span></h2>
+        <div className="about__grid">
+          <div className="about__text">
+            <p>
+              Flip Finance was founded with a simple mission: give real estate investors access to <span className="gold">fast, reliable capital</span> without the red tape of traditional lending.
+            </p>
+            <p>
+              We're not a bank. We're a team of investors and finance professionals who understand the fix-and-flip game from the inside out. Every member of our team has <span className="gold">real experience</span> in real estate investing — which means we evaluate deals the way you do.
+            </p>
+            <p>
+              Based in <span className="gold">Denver, Colorado</span>, we serve investors across the region who are ready to move fast and close with confidence.
+            </p>
+          </div>
+          <div className="about__stats">
+            <div className="stat">
+              <span className="stat__number gold">24hr</span>
+              <span className="stat__label">Typical Approval Time</span>
+            </div>
+            <div className="stat">
+              <span className="stat__number gold">100%</span>
+              <span className="stat__label">Investor-Focused</span>
+            </div>
+            <div className="stat">
+              <span className="stat__number gold">$0</span>
+              <span className="stat__label">Upfront Fees</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="reviews">
+        <h2 className="reviews__title">What Our <span className="gold">Investors</span> Say</h2>
+        <div className="reviews__grid">
+          <div className="review-card">
+            <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p className="review-card__text">"Fastest funding I've ever experienced. I had approval within hours and closed in under a week. These guys actually understand the flip game."</p>
+            <span className="review-card__author">— Jordan M., Denver CO</span>
+          </div>
+          <div className="review-card">
+            <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p className="review-card__text">"No committees, no runaround. Just straight answers and fast money. Flip Finance is the only lender I'll use going forward."</p>
+            <span className="review-card__author">— Marcus T., Aurora CO</span>
+          </div>
+          <div className="review-card">
+            <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p className="review-card__text">"I've worked with hard money lenders who took weeks to close. Flip Finance had my back from day one. Real investors funding real investors."</p>
+            <span className="review-card__author">— Sarah K., Lakewood CO</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <h2 className="contact__title">Get In <span className="gold">Touch</span></h2>
+        <div className="contact__grid">
+          <div className="contact__info">
+            <div className="contact__item">
+              <h3>Location</h3>
+              <p>Denver, Colorado</p>
+            </div>
+            <div className="contact__item">
+              <h3>Phone</h3>
+              <p><a href="tel:+13035551234">(303) 555-1234</a></p>
+            </div>
+            <div className="contact__item">
+              <h3>Email</h3>
+              <p><a href="mailto:info@flipfinance.com">info@flipfinance.com</a></p>
+            </div>
+          </div>
+          <div className="contact__cta">
+            <p>Ready to get started? Get approved today and be ready to close on your next deal.</p>
+            <button className="btn-sleek" onClick={() => setShowApply(true)}>
+              Apply Now
+            </button>
+            <button className="btn-sleek btn-sleek--disabled" disabled>
+              Pay Now — Coming Soon
+            </button>
+          </div>
+        </div>
+      </section>
+
       <footer className="footer">
         <img src="/images/logo.webp" alt="Flip Finance" className="footer__logo" />
         <div className="footer__actions">
-          <button className="btn-sleek" onClick={() => setShowPreQualify(true)}>Pre Qualify</button>
-          <button className="btn-sleek" onClick={() => setShowSubmitProperty(true)}>Submit a Property</button>
+          <button className="btn-sleek" onClick={() => setShowApply(true)}>Apply Now</button>
+          <button className="btn-sleek btn-sleek--disabled" disabled>Pay Now — Coming Soon</button>
         </div>
         <p className="footer__copy">&copy; {new Date().getFullYear()} Flip Finance. All rights reserved.</p>
       </footer>
 
-      {showPreQualify && <PreQualifyModal onClose={() => setShowPreQualify(false)} />}
-      {showSubmitProperty && <SubmitPropertyModal onClose={() => setShowSubmitProperty(false)} />}
+      {showApply && <ApplyModal onClose={() => setShowApply(false)} />}
     </div>
   );
 }

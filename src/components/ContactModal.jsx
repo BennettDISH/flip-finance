@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './Modal.scss';
 
-function PreQualifyModal({ onClose }) {
+function ApplyModal({ onClose }) {
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     experience_level: '',
+    property_address: '',
     estimated_budget: '',
-    markets: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -22,7 +22,7 @@ function PreQualifyModal({ onClose }) {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch('/api/prequalify', {
+      await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -42,14 +42,14 @@ function PreQualifyModal({ onClose }) {
         {submitted ? (
           <div className="modal__success">
             <h2>Application Received!</h2>
-            <p>We'll have you prequalified within hours of your completed application.</p>
+            <p>Our team will review your application and get back to you within hours.</p>
             <button className="btn" onClick={onClose}>Close</button>
           </div>
         ) : (
           <>
-            <h2 className="modal__title">Pre Qualify</h2>
+            <h2 className="modal__title">Get Approved Now</h2>
             <p className="modal__desc">
-              Need to have funds available for future projects? Fill out the application and we will get you prequalified within hours of your completed application.
+              Fill out the application below and our team will have you approved within hours.
             </p>
             <form className="modal__form" onSubmit={handleSubmit}>
               <input
@@ -88,16 +88,16 @@ function PreQualifyModal({ onClose }) {
               </select>
               <input
                 type="text"
-                name="estimated_budget"
-                placeholder="Estimated Project Budget"
-                value={form.estimated_budget}
+                name="property_address"
+                placeholder="Property Address (if applicable)"
+                value={form.property_address}
                 onChange={handleChange}
               />
               <input
                 type="text"
-                name="markets"
-                placeholder="Target Markets / Locations"
-                value={form.markets}
+                name="estimated_budget"
+                placeholder="Estimated Loan Amount"
+                value={form.estimated_budget}
                 onChange={handleChange}
               />
               <textarea
@@ -108,7 +108,7 @@ function PreQualifyModal({ onClose }) {
                 rows={3}
               />
               <button type="submit" className="btn" disabled={loading}>
-                {loading ? 'Submitting...' : 'Apply'}
+                {loading ? 'Submitting...' : 'Apply Now'}
               </button>
             </form>
           </>
@@ -118,4 +118,4 @@ function PreQualifyModal({ onClose }) {
   );
 }
 
-export default PreQualifyModal;
+export default ApplyModal;

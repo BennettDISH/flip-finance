@@ -24,26 +24,14 @@ app.get('/health', (req, res) => {
 });
 
 // API routes
-app.post('/api/prequalify', (req, res) => {
-  const webhookUrl = process.env.GHL_PREQUALIFY_WEBHOOK_URL;
+app.post('/api/apply', (req, res) => {
+  const webhookUrl = process.env.GHL_APPLY_WEBHOOK_URL;
   if (webhookUrl) {
     fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(req.body),
-    }).catch(err => console.error('GHL prequalify webhook error:', err));
-  }
-  res.json({ success: true });
-});
-
-app.post('/api/submit-property', (req, res) => {
-  const webhookUrl = process.env.GHL_PROPERTY_WEBHOOK_URL;
-  if (webhookUrl) {
-    fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(req.body),
-    }).catch(err => console.error('GHL property webhook error:', err));
+    }).catch(err => console.error('GHL apply webhook error:', err));
   }
   res.json({ success: true });
 });
