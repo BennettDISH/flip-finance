@@ -200,6 +200,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 // Content sections
@@ -376,73 +383,6 @@
   }
 }
 
-// Contact section
-.contact {
-  padding: 80px 60px;
-  border-top: 1px solid $dark-border;
-
-  &__title {
-    font-family: $font-heading;
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 48px;
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  &__item {
-    h3 {
-      font-family: $font-heading;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: $gold;
-      margin-bottom: 6px;
-    }
-
-    p {
-      font-size: 1.15rem;
-      color: $light-gray;
-    }
-
-    a {
-      color: $light-gray;
-      transition: color 0.2s;
-
-      &:hover {
-        color: $white;
-      }
-    }
-  }
-
-  &__cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-
-    p {
-      color: $light-gray;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 8px;
-    }
-  }
-}
-
 // Footer
 .footer {
   border-top: 1px solid $dark-border;
@@ -462,6 +402,45 @@
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  &__info {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 16px;
+    border-top: 1px solid $dark-border;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &__col {
+    text-align: center;
+
+    h4 {
+      font-family: $font-heading;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: $gold;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $light-gray;
+    }
+
+    a {
+      color: $light-gray;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $white;
+      }
+    }
   }
 
   &__copy {
@@ -537,19 +516,6 @@
     &__grid {
       grid-template-columns: 1fr;
       gap: 20px;
-    }
-  }
-
-  .contact {
-    padding: 48px 24px;
-
-    &__title {
-      font-size: 2rem;
-    }
-
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
     }
   }
 
