@@ -121,6 +121,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 
   &::before {
     content: '';
@@ -130,6 +131,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: inherit;
+    z-index: -1;
   }
 
   &:hover {
@@ -139,11 +141,6 @@
     &::before {
       opacity: 1;
     }
-  }
-
-  span, & {
-    position: relative;
-    z-index: 1;
   }
 
   &--disabled {
