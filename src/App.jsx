@@ -142,6 +142,11 @@ function HomePage() {
             <p className="review-card__text">"The process with Flip Finance was smooth, simple and affordable. From start to finish, the folks I spoke to were professional and kind. It was the fastest draw process I've ever experienced, and my funds were delivered within days. I am looking forward to using them again soon!"</p>
             <span className="review-card__author">— Ben Handler, Fix and Flip Investor</span>
           </div>
+          <div className="review-card">
+            <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p className="review-card__text">"I've used Flip Finance on multiple deals here in Colorado and they've been great every time. Quick to fund, easy process, and no unnecessary back and forth. Speed and reliability matter — and they've delivered every time!"</p>
+            <span className="review-card__author">— Justin Van Sickle, Fix and Flip Investor</span>
+          </div>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { navigate } from '../router';
 import './Modal.scss';
 
 function ApplyModal({ onClose }) {
@@ -10,12 +11,20 @@ function ApplyModal({ onClose }) {
     property_address: '',
     estimated_budget: '',
     message: '',
+    sms_consent: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setForm({ ...form, [e.target.name]: value });
+  };
+
+  const goTo = (path) => (e) => {
+    e.preventDefault();
+    onClose?.();
+    navigate(path);
   };
 
   const handleSubmit = async (e) => {
@@ -107,6 +116,21 @@ function ApplyModal({ onClose }) {
                 onChange={handleChange}
                 rows={3}
               />
+              <label className="modal__consent">
+                <input
+                  type="checkbox"
+                  name="sms_consent"
+                  checked={form.sms_consent}
+                  onChange={handleChange}
+                  required
+                />
+                <span>
+                  By checking this box, I agree to receive SMS messages from Flip Finance Co regarding my inquiry and services. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for assistance. See our{' '}
+                  <a href="/privacy-policy" onClick={goTo('/privacy-policy')}>Privacy Policy</a>{' '}
+                  and{' '}
+                  <a href="/terms-of-use" onClick={goTo('/terms-of-use')}>Terms of Use</a>.
+                </span>
+              </label>
               <button type="submit" className="btn" disabled={loading}>
                 {loading ? 'Submitting...' : 'Apply Now'}
               </button>
