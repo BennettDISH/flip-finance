@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import ApplyModal from './components/ContactModal';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import { usePathname, navigate } from './router';
 import './App.scss';
 
-function App() {
+function HomePage() {
   const [showApply, setShowApply] = useState(false);
 
   return (
@@ -156,19 +159,48 @@ function App() {
           </div>
           <div className="footer__col">
             <h4>Phone</h4>
-            <p><a href="tel:+13035551234">(303) 555-1234</a></p>
+            <p><a href="tel:+17202716600">(720) 271-6600</a></p>
           </div>
           <div className="footer__col">
             <h4>Email</h4>
             <p><a href="mailto:info@flipfinance.com">info@flipfinance.com</a></p>
           </div>
         </div>
-        <p className="footer__copy">&copy; {new Date().getFullYear()} Flip Finance. All rights reserved.</p>
+        <nav className="footer__legal">
+          <a
+            href="/privacy-policy"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/privacy-policy');
+            }}
+          >
+            Privacy Policy
+          </a>
+          <span aria-hidden="true">·</span>
+          <a
+            href="/terms-of-use"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/terms-of-use');
+            }}
+          >
+            Terms of Use
+          </a>
+        </nav>
+        <p className="footer__copy">&copy; {new Date().getFullYear()} Flip Finance Co. All rights reserved.</p>
       </footer>
 
       {showApply && <ApplyModal onClose={() => setShowApply(false)} />}
     </div>
   );
+}
+
+function App() {
+  const pathname = usePathname();
+
+  if (pathname === '/privacy-policy') return <PrivacyPolicy />;
+  if (pathname === '/terms-of-use') return <TermsOfUse />;
+  return <HomePage />;
 }
 
 export default App;

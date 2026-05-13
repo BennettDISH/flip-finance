@@ -440,6 +440,30 @@
     }
   }
 
+  &__legal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    font-family: $font-heading;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    a {
+      color: $light-gray;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $gold;
+      }
+    }
+
+    span {
+      color: $gray;
+    }
+  }
+
   &__copy {
     color: $gray;
     font-size: 0.85rem;
