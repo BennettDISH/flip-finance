@@ -144,7 +144,7 @@ function HomePage() {
           </div>
           <div className="review-card">
             <div className="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p className="review-card__text">"I've used Flip Finance on multiple deals here in Colorado and they've been great every time. Quick to fund, easy process, and no unnecessary back and forth. Speed and reliability matter — and they've delivered every time!"</p>
+            <p className="review-card__text">"I've used Flip Finance on multiple deals here in Colorado and they've been great every time. Quick to fund, easy process, and no unnecessary back and forth. Speed and reliability matter and they've delivered every time!"</p>
             <span className="review-card__author">— Justin Van Sickle, Fix and Flip Investor</span>
           </div>
         </div>
